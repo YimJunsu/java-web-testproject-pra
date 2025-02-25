@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/css/upload.css'>
+</head>
+<body>
+    <div class="container">
+        <h3>환자 등록</h3>
+            <div class="form-group">
+                <label for="name">이름</label>
+                <input type="text" class="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="birthdate">생년월일</label>
+                <input type="text" class="birthdate" name="birthdate" pattern="\d{4}-\d{2}-\d{2}" placeholder="1980-08-14" required>
+                <small>형식: yyyy-mm-dd</small>
+            </div>
+            
+
+            <div class="form-group">
+                <label for="phone">전화번호</label>
+                <input type="tel" class="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="address">주소</label>
+                <input type="text" class="address" name="address" required>
+            </div>
+
+            <button type="submit" class="btn-submit" onclick="uploadpi()">등록하기</button>
+    </div>
+
+
+    <script src='/js/upload.js'></script>
+</body>
+</html>

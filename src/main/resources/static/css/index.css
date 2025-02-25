@@ -1,0 +1,55 @@
+/* 기본적인 스타일 */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-containor {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 버튼 스타일 */
+button {
+    padding: 15px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* '환자 등록 하기' 버튼 */
+button:first-of-type {
+    background-color: #4CAF50;
+    color: white;
+}
+
+button:first-of-type:hover {
+    background-color: #45a049;
+}
+
+button:first-of-type:active {
+    background-color: #388e3c;
+}
+
+/* '진료 예약 하기' 버튼 */
+button:last-of-type {
+    background-color: #2196F3;
+    color: white;
+}
+
+button:last-of-type:hover {
+    background-color: #1976d2;
+}
+
+button:last-of-type:active {
+    background-color: #1565c0;
+}

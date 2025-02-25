@@ -28,7 +28,7 @@ public class DoctorEntity extends BaseTime {
                 .name(this.name)
                 .specialty(this.specialty)
                 .phone(this.phone)
-                .createdat(this.getCreatedat().toString())
-            .build();
+                .createdat(this.getCreatedat() != null ? this.getCreatedat().toString() : "default value")
+                .build();
     }
 }

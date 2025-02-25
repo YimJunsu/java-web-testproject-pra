@@ -7,6 +7,7 @@ import testproject.model.dto.ReservationDto;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @Entity
 @Table(name = "reservation")
@@ -16,30 +17,33 @@ public class ReservaitonEntity extends BaseTime{
     @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
     private int reservationid;
     @Column(columnDefinition = "DATE" , nullable = false)
-    private LocalDate reservaitondate;
+    private LocalDate reservationdate;
     @Column(columnDefinition = "TIME" , nullable = false)
-    private LocalDateTime reservationtime;
+    private LocalTime reservationtime;
     @Column(columnDefinition = "boolean")
     @ColumnDefault("false")
     private boolean status;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "doctorid")
     private DoctorEntity doctorEntity;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "patientid")
     private PatientEntity patientEntity;
 
     public ReservationDto toDto(){
         return ReservationDto.builder()
                 .reservationid(this.reservationid)
-                .reservaitondate(this.reservaitondate)
-                .reservaitontime(this.reservationtime)
+                .reservationdate(this.reservationdate)
+                .reservationtime(this.reservationtime)
                 .status(this.status)
                 .doctorid(this.doctorEntity.getDoctorid())
+                .doctorName(this.doctorEntity.getName())
                 .patientid(this.patientEntity.getPatientid())
-                .createdat(this.getCreatedat().toString())
+                .patientName(this.patientEntity.getName())
+                .createdat(this.getCreatedat() != null ? this.getCreatedat().toString() : "default value")
                 .build();
     }
+
 }

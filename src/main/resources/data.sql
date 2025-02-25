@@ -30,7 +30,7 @@ INSERT INTO doctor (name, specialty, phone) VALUES
 ('정다연', '이비인후과', '010-5432-1098');
 
 -- 진료 예약 데이터
-INSERT INTO reservation (patientid, doctorid, reservaitondate, reservationtime, status) VALUES
+INSERT INTO reservation (patientid, doctorid, reservationdate, reservationtime, status) VALUES
 (1, 1, '2025-03-01', '09:30:00', 1),
 (2, 2, '2025-03-01', '10:00:00', 1),
 (3, 3, '2025-03-01', '11:30:00', 1),
