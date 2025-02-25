@@ -52,6 +52,7 @@ public class PatientService {
         if(patientDto.getPatientid()>0){
             updateEntity.setAddress(patientDto.getAddress());
             updateEntity.setPhone(patientDto.getPhone());
+            patientRepository.save(updateEntity);
             return true;
         }
         return false;

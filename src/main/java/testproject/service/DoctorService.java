@@ -54,6 +54,7 @@ public class DoctorService {
         }
         return false;
     }
+    @Transactional
     public boolean remove(int doctorid){
         reservationRepository.deleteByDoctorEntity_Doctorid(doctorid);
         doctorRepositoy.deleteById(doctorid);

@@ -23,7 +23,6 @@ const viewall = () =>{
 viewall();
 
 const showOffCanvas = (patientid) => {
-    // 상세 정보를 오프캔버스에 표시하는 로직
     fetch(`/patient/view?patientid=${patientid}`, { method: 'GET' })
         .then(response => response.json())
         .then(data => {
@@ -36,8 +35,9 @@ const showOffCanvas = (patientid) => {
                 <p><strong>주소:</strong> ${data.address}</p>
                 <p><strong>가입날짜:</strong> ${data.createdat}</p>
 
-                <button onclick="remove(${data.patientid})" type="button">환자 삭제</button> <!-- patientid 전달 -->
-            `;
+                <button onclick="remove(${data.patientid})" type="button">환자 삭제</button>
+                <a href="/changepa.html?patientid=${data.patientid}" class="btn btn-primary">환자 수정</a>
+                `;
             var myOffcanvas = new bootstrap.Offcanvas(document.getElementById('offcanvasScrolling'));
                     myOffcanvas.show();
         })
@@ -62,3 +62,4 @@ function remove(patientid) {
         console.log('오류 발생:', e);
     });
 }
+
