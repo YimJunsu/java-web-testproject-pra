@@ -17,6 +17,7 @@ public class ViewController {
     // 환자 등록
     @GetMapping("/upload.html")
     String register(){return "/upload.html";}
+    // 환자 수정
     @GetMapping("/changepa.html")
     String changepa(){return "/changepa.html";}
     // 예약 등록
@@ -27,4 +28,7 @@ public class ViewController {
     // 의사 등록
     @GetMapping("/uploaddoctor.html")
     String registerdoctor(){return "/uploaddoctor.html";}
+    // 의사 수정
+    @GetMapping("/changeda.html")
+    String changeda(){return "/changeda.html";}
 }

@@ -35,7 +35,8 @@ const showOffCanvas = (doctorid) => {
                 <p><strong>가입날짜:</strong> ${data.createdat}</p>
 
                 <button onclick="remove(${data.doctorid})" type="button">의사 삭제</button> 
-            `;
+                <a href="/changeda.html?doctorid=${data.doctorid}" class="btn btn-primary">의사 정보 수정</a>
+                `;
             var myOffcanvas = new bootstrap.Offcanvas(document.getElementById('offcanvasScrolling'));
                     myOffcanvas.show();
         })
