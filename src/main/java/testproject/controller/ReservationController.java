@@ -35,4 +35,14 @@ public class ReservationController {
     public boolean remove(@RequestParam int reservationid){
         return reservationService.remove(reservationid);
     }
+
+    @GetMapping("/reservation/viewalldoctor")
+    public List<ReservationDto> viewAllDoctor(@RequestParam int doctorid){
+        return reservationService.viewAllDoctor(doctorid);
+    }
+
+    @GetMapping("/reservation/viewallpatient")
+    public List<ReservationDto> viewAllPatient(@RequestParam int patientid){
+        return reservationService.viewAllPatient(patientid);
+    }
 }

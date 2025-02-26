@@ -53,8 +53,26 @@ public class ReservationService {
         return false;
     }
     @Transactional
-    public boolean remove(int reservationid){
+    public boolean remove(int reservationid) {
         reservationRepository.deleteById(reservationid);
         return true;
+    }
+    // 의사 예약 조회
+    public List<ReservationDto> viewAllDoctor(int doctorid){
+        List<ReservaitonEntity> reservaitonEntityList = reservationRepository.findByDoctorEntity_Doctorid(doctorid);
+        List<ReservationDto> reservationDtoList = new ArrayList<>();
+        reservaitonEntityList.forEach(obj->{
+            reservationDtoList.add(obj.toDto());
+        });
+        return reservationDtoList;
+    }
+    // 환자 예약 조회
+    public List<ReservationDto> viewAllPatient(int patientid){
+        List<ReservaitonEntity> reservaitonEntityList = reservationRepository.findByPatientEntity_Patientid(patientid);
+        List<ReservationDto> reservationDtoList = new ArrayList<>();
+        reservaitonEntityList.forEach(obj->{
+            reservationDtoList.add(obj.toDto());
+        });
+        return reservationDtoList;
     }
 }
