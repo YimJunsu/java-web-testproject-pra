@@ -31,4 +31,10 @@ public class ViewController {
     // 의사 수정
     @GetMapping("/changeda.html")
     String changeda(){return "/changeda.html";}
+    // 의사별 환자 예약 목록
+    @GetMapping("/viewdocrev.html")
+    String viewdocrev(){return "/viewdocrev.html";}
+
+    @GetMapping("/viewpatrev.html")
+    String viewpatrev(){return "/viewpatrev.html";}
 }
